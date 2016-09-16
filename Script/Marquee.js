@@ -11,17 +11,17 @@ $(document).ready(function(){
 
         $.fn.marquee = function(args) {
             var that = $(this);
-            var textWidth = that.textWidth(),
-                offset = that.width(),
+            var textWidth = 10,
+                offset = $(".row").width(),
                 width = offset,
                 
                 css = {
-                    'text-indent' : that.css('text-indent'),
+                    'margin-left' : that.css('margin-left'),
                     'overflow' : that.css('overflow'),
                     'white-space' : that.css('white-space')
                 },
                 marqueeCss = {
-                    'text-indent' : width,
+                    'margin-left' : width,
                     'overflow' : 'hidden',
                     'white-space' : 'nowrap'
                 },
@@ -35,6 +35,7 @@ $(document).ready(function(){
             
             if(!that.length) return dfd.reject();
             if(width == stop) {
+                play();
                 i++;
  
                 if(i == args.count) {
@@ -51,7 +52,7 @@ $(document).ready(function(){
                 }
             }
             
-            that.css('text-indent', width + 'px');
+            that.css('margin-left', width + 'px');
             if(args.leftToRight) {
                 width++;
             } else {
@@ -75,8 +76,8 @@ $(document).ready(function(){
         
     })(jQuery);
 
-
-    $('.note').marquee({ speed: 5 });
+    
+    $('.noted').marquee({ speed: 0 });
     
    
 });
