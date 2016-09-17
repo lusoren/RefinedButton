@@ -26,16 +26,17 @@ $(document).ready(function(){
                     'white-space' : 'nowrap'
                 },
                 
-                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false }, args),
+                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, note: "" }, args),
                 i = 0,
                 stop = textWidth*-1,
                 dfd = $.Deferred();
 
         function go() {
             
+            
             if(!that.length) return dfd.reject();
             if(width == stop) {
-                play();
+                play(args.note);
                 i++;
  
                 if(i == args.count) {
@@ -76,8 +77,6 @@ $(document).ready(function(){
         
     })(jQuery);
 
-    
-    $('.noted').marquee({ speed: 0 });
     
    
 });
