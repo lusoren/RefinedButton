@@ -1,58 +1,58 @@
-function play(nt){
+function playGlass(nt){
     if (nt=="AFlat") {
-        var audio = new Audio('Audio/AFlat.mp3');
+        var audio = new Audio('Glass/A3.mp3');
         audio.play();
     }
     if (nt=="A") {
-        var audio = new Audio('Audio/A.mp3');
+        var audio = new Audio('Glass/B3.mp3');
         audio.play();
     }
     if (nt=="ASharp") {
-        var audio = new Audio('Audio/ASharp.mp3');
+        var audio = new Audio('Glass/C3.mp3');
         audio.play();
     }
     if (nt=="BFlat") {
-        var audio = new Audio('Audio/BFlat.mp3');
+        var audio = new Audio('Glass/D3.mp3');
         audio.play();
     }
     if (nt=="B") {
-        var audio = new Audio('Audio/B.mp3');
+        var audio = new Audio('Glass/E3.mp3');
         audio.play();
     }
     if (nt=="BSharp") {
-        var audio = new Audio('Audio/BSharp.mp3');
+        var audio = new Audio('Glass/F3.mp3');
         audio.play();
     }
     if (nt=="CFlat") {
-        var audio = new Audio('Audio/CFlat.mp3');
+        var audio = new Audio('Glass/G3.mp3');
         audio.play();
     }
     if (nt=="C") {
-        var audio = new Audio('Audio/C.mp3');
+        var audio = new Audio('Glass/A4.mp3');
         audio.play();
     }
     if (nt=="CSharp") {
-        var audio = new Audio('Audio/CSharp.mp3');
+        var audio = new Audio('Glass/B4.mp3');
         audio.play();
     }
     if (nt=="DFlat") {
-        var audio = new Audio('Audio/DFlat.mp3');
+        var audio = new Audio('Glass/C4.mp3');
         audio.play();
     }
     if (nt=="D") {
-        var audio = new Audio('Audio/D.mp3');
+        var audio = new Audio('Glass/D4.mp3');
         audio.play();
     }
     if (nt=="DSharp") {
-        var audio = new Audio('Audio/DSharp.mp3');
+        var audio = new Audio('Glass/E4.mp33');
         audio.play();
     }
     if (nt=="EFlat") {
-        var audio = new Audio('Audio/EFlat.mp3');
+        var audio = new Audio('Glass/F4.mp3');
         audio.play();
     }
     if (nt=="E") {
-        var audio = new Audio('Audio/E.mp3');
+        var audio = new Audio('Glass/G4.mp3');
         audio.play();
     }
     if (nt=="ESharp") {

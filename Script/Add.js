@@ -68,6 +68,8 @@ $(document).ready(function(){
         if (id=="#row20") {
             var nt="G";
         }
+        
+        playGlass(nt);
 
         $('<script>')
             

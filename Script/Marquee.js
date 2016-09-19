@@ -36,7 +36,8 @@ $(document).ready(function(){
             
             if(!that.length) return dfd.reject();
             if(width == stop) {
-                play(args.note);
+                playGlass(args.note);
+
                 i++;
  
                 if(i == args.count) {
