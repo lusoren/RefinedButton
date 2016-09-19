@@ -34,10 +34,16 @@ $(document).ready(function(){
         function go() {
             
             
+            
             if(!that.length) return dfd.reject();
+            
+            if ((width/offset)==.5) {
+                 playGlass(args.note);
+                 that.css("background-color", "white");
+            }
             if(width == stop) {
-                playGlass(args.note);
-
+               
+                that.css("background-color", "gray");
                 i++;
  
                 if(i == args.count) {
