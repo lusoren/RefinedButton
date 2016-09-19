@@ -9,19 +9,20 @@ $(document).ready(function(){
             return width;
         };
 
-        $.fn.marquee = function(args) {
+        $.fn.stretch = function(args) {
+
             var that = $(this);
             var textWidth = 10,
                 offset = $(".row").width(),
                 width = offset,
                 
                 css = {
-                    'margin-left' : that.css('margin-left'),
+                    'padding-left' : that.css('padding-left'),
                     'overflow' : that.css('overflow'),
                     'white-space' : that.css('white-space')
                 },
                 marqueeCss = {
-                    'margin-left' : width,
+                    'padding-left' : width,
                     'overflow' : 'hidden',
                     'white-space' : 'nowrap'
                 },
@@ -34,10 +35,11 @@ $(document).ready(function(){
         function go() {
             
             
+            
             if(!that.length) return dfd.reject();
             
             if ((width/offset)==.5) {
-                 playGlass(args.note);
+           
                  that.css("background-color", "white");
             }
             
@@ -60,11 +62,11 @@ $(document).ready(function(){
                 }
             }
             
-            that.css('margin-left', width + 'px');
+            that.css('padding-left', width + 'px');
             if(args.leftToRight) {
                 width++;
             } else {
-                width--;
+                width++;
             }
             setTimeout(go, args.speed);
         };
@@ -84,6 +86,7 @@ $(document).ready(function(){
         
     })(jQuery);
 
+    $(".grow").stretch();
     
    
 });

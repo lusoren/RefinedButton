@@ -9,10 +9,6 @@ $(document).ready(function(){
         $(id).append("<div class=\"note note" + x + "\" id=\"#ass\"></div>");
         //alert("<div class=\"note" + x + "\" id=\"#ass\"></div>");
 
-        
-        
-
-
         $('<script>')
             
             .attr('type', 'text/javascript')

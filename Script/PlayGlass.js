@@ -1,4 +1,5 @@
 function playGlass(nt){
+    
     if (nt=="row1") {
         var audio = new Audio('Glass/A3.mp3');
         audio.play();
