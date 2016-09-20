@@ -25,6 +25,10 @@ html, body {
     right: 0;
     overflow: visible;
     
+    background-image: url('../Images/Tokyo.jpg');
+    background-attachment: fixed;
+    
+    
 }
 .note:hover {
     cursor: pointer;

@@ -14,7 +14,7 @@ $(document).ready(function(){
             var that = $(this);
             var textWidth = 10,
                 offset = $(".row").width(),
-                width = offset,
+                width = '0',
                 
                 css = {
                     'padding-left' : that.css('padding-left'),
@@ -22,7 +22,7 @@ $(document).ready(function(){
                     'white-space' : that.css('white-space')
                 },
                 marqueeCss = {
-                    'padding-left' : width,
+                    'padding-left' : 'width',
                     'overflow' : 'hidden',
                     'white-space' : 'nowrap'
                 },
@@ -33,19 +33,17 @@ $(document).ready(function(){
                 dfd = $.Deferred();
 
         function go() {
-            
-            
-            
+        
             if(!that.length) return dfd.reject();
             
             if ((width/offset)==.5) {
            
-                 that.css("background-color", "white");
+                 that.css("background-color", "blue");
             }
             
-            if(width == stop) {
+            if(width == offset) {
                
-                that.css("background-color", "gray");
+                that.css("background-color", "red");
                 i++;
  
                 if(i == args.count) {
@@ -58,16 +56,12 @@ $(document).ready(function(){
                 }
                 
                 else {
-                    width = offset;
+                    width = 0;
                 }
             }
             
             that.css('padding-left', width + 'px');
-            if(args.leftToRight) {
                 width++;
-            } else {
-                width++;
-            }
             setTimeout(go, args.speed);
         };
         
