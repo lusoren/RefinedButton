@@ -10,10 +10,12 @@ $(document).ready(function(){
         };
 
         $.fn.stretch = function(args) {
-
+            
             var that = $(this);
             var textWidth = 10,
                 offset = $(".row").width(),
+                RowId = $(".row").attr('id'),
+                classs=that.attr('class'),
                 width = '0',
                 
                 css = {
@@ -37,13 +39,11 @@ $(document).ready(function(){
             if(!that.length) return dfd.reject();
             
             if ((width/offset)==.5) {
-           
-                 that.css("background-color", "blue");
+                playGlass(args.note);
             }
             
             if(width == offset) {
-               
-                that.css("background-color", "red");
+            
                 i++;
  
                 if(i == args.count) {
@@ -57,11 +57,13 @@ $(document).ready(function(){
                 
                 else {
                     width = 0;
+                    ass= classs.replace("grow ","");
+                    background(RowId, ass);
                 }
             }
             
             that.css('padding-left', width + 'px');
-                width++;
+            width++;
             setTimeout(go, args.speed);
         };
         

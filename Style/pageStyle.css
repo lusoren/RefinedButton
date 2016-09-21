@@ -19,14 +19,17 @@ html, body {
 .grow {
     width: 10px;
     height: 100%;
-    background-color: black;
-    opacity: 0.8;
+    background-color: red;
     position: absolute;
     right: 0;
     overflow: visible;
+   
     
-    background-image: url('../Images/Tokyo.jpg');
-    background-attachment: fixed;
+    background-attachment: fixed; 
+    
+   
+
+    border-left: 10px solid;
     
     
 }
@@ -74,4 +77,6 @@ html, body {
     
     background-color: gray;
     z-index:-1;
+    
+    background-image: url("../Images/Tokyo.jpg");
 }
