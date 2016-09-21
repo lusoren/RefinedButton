@@ -40,6 +40,7 @@ $(document).ready(function(){
             
             if ((width/offset)==.5) {
                 playGlass(args.note);
+                that.css("border-color","white");
             }
             
             if(width == offset) {
@@ -57,12 +58,17 @@ $(document).ready(function(){
                 
                 else {
                     width = 0;
-                    ass= classs.replace("grow ","");
-                    background(RowId, ass);
+  
+                    ass= classs.replace("grow grow","");
+                    cheek= RowId.replace("row","");
+                    that.css("border-color","black");
+                    
+                    background(cheek,ass);
                 }
             }
             
             that.css('padding-left', width + 'px');
+            
             width++;
             setTimeout(go, args.speed);
         };
@@ -82,7 +88,6 @@ $(document).ready(function(){
         
     })(jQuery);
 
-    $(".grow").stretch();
     
    
 });

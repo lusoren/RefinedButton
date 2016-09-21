@@ -6,6 +6,9 @@ html, body {
     height: 100%;
 }
 
+body {
+    /*background-image: url("../Images/Turtles.jpg");*/
+}
 .note {
     width: 10px;
     height: 100%;
@@ -78,5 +81,5 @@ html, body {
     background-color: gray;
     z-index:-1;
     
-    background-image: url("../Images/Tokyo.jpg");
+    /*background-image: url("../Images/Tokyo.jpg");*/
 }

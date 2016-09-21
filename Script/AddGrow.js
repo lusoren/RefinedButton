@@ -1,56 +1,57 @@
 $(document).ready(function(){
     
-    var x=0;
+    
+    
+    var growId=0;
     $(".row").click(function(){
-         var id = "#" + $(this).attr('id');
-        //row number
+        
+        //row number as rowN
         var nt=$(this).attr('id');
         
-        //singular calss name
-        var div= "grow" + x;
+        //#rowN
+        var id = "#" + nt;
         
-        $(id).append("<div class=\"grow grow" + x + "\"></div>");
+        //alert(id + " " +nt + " " +growId + " " + toggle[growId]);
+        
+        
+        //add musical now with unique class name
+        $(id).append("<div class=\"grow grow" + growId + "\"></div>");
         
         $('<script>')
             
             .attr('type', 'text/javascript')
-            .text("$(\".grow" + x + "\").stretch({ note:\"" + nt + "\"});")
+            .text("$(\".grow" + growId + "\").stretch({ note:\"" + nt + "\"});")
             .appendTo('head');
         
-        background(nt, div);
-        x++;
+        ass= nt.replace("row","");
+        background(ass, growId);
+        
+        growId++;
+        
     });
 
 });
 
-var ttt= true;
-var tttt= 0;
+//instatiate toggle
+var toggle = []
+for (i = 0; i < 21; i++) {
+        toggle[i] =0;
+}
 
-function background(row, div) {
+function background(row, idTag) {
 
-    if (row=="row1") {
-        if (ttt==true) {
-            $("." + div).css( "background-image", "url(\'Images/Tokyo.jpg\')");
-            $("." + div).css( "z-index", tttt);
+    if (toggle[row]%2 == 0) {
+        $(".grow" + idTag).css( "background-image", "url(\'Images/Tokyo.jpg\')");
+        $(".grow" + idTag).css( "z-index", toggle[1]);
 
-            tttt++;
-            ttt=false;
-            return;
+        toggle[row]=toggle[row]+1;
+        return;
         
-        } else {
-            $("." + div).css( "background-image", "none");
-            $("." + div).css("background-color","white");
-            $("." + div).css( "z-index", tttt);
+    } else {
+        $(".grow" + idTag).css( "background-image", "url(\'Images/Turtles.jpg\')");
+        $(".grow" + idTag).css( "z-index", toggle[1]);
             
-            tttt++;
-            
-            ttt=true;
-            return;
-        }
+        toggle[row]=toggle[row]+1;
+        return;
     }
-    
-    else {
-        alert("fuck");
-    }
-
 }
