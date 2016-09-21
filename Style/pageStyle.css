@@ -7,7 +7,8 @@ html, body {
 }
 
 body {
-    /*background-image: url("../Images/Turtles.jpg");*/
+    background-image: url("../Images/Half2.png");
+    background-size: 100% 100%;
 }
 .note {
     width: 10px;
@@ -16,7 +17,7 @@ body {
     opacity: 0.8;
     position: absolute;
     overflow: visible;
-    
+    opacity: 0.8;
 }
 
 .grow {
@@ -27,12 +28,13 @@ body {
     right: 0;
     overflow: visible;
    
-    
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
     background-attachment: fixed; 
     
-   
+   background-size: 100% 100%;
 
-    border-left: 10px solid;
+    /*border-left: 10px solid;*/
     
     
 }
@@ -71,14 +73,14 @@ body {
 }
 
 #half {
-    background-color: blue;
+
     position: fixed;
     top: 0;
     left: 0;
     width:50%;
     height: 100%;
     
-    background-color: gray;
+
     z-index:-1;
     
     /*background-image: url("../Images/Tokyo.jpg");*/

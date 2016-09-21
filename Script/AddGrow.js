@@ -1,7 +1,5 @@
 $(document).ready(function(){
     
-    
-    
     var growId=0;
     $(".row").click(function(){
         
@@ -32,23 +30,30 @@ $(document).ready(function(){
 
 });
 
-//instatiate toggle
+//instantiate toggle
 var toggle = []
 for (i = 0; i < 21; i++) {
         toggle[i] =0;
 }
 
 function background(row, idTag) {
+    
+    //if (toggle[row]==1) {
+    //    $(".grow" + idTag).css( "background-image", "url(\'Images/Half1.png\')");
+    //    $(".grow" + idTag).css( "z-index", toggle[1]);
+    //
+    //    toggle[row]=toggle[row]+2;
+    //}
 
     if (toggle[row]%2 == 0) {
-        $(".grow" + idTag).css( "background-image", "url(\'Images/Tokyo.jpg\')");
+        $(".grow" + idTag).css( "background-image", "url(\'Images/Half1.png\')");
         $(".grow" + idTag).css( "z-index", toggle[1]);
 
         toggle[row]=toggle[row]+1;
         return;
         
     } else {
-        $(".grow" + idTag).css( "background-image", "url(\'Images/Turtles.jpg\')");
+        $(".grow" + idTag).css( "background-image", "url(\'Images/Half2.png\')");
         $(".grow" + idTag).css( "z-index", toggle[1]);
             
         toggle[row]=toggle[row]+1;
