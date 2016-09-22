@@ -9,9 +9,6 @@ $(document).ready(function(){
         //#rowN
         var id = "#" + nt;
         
-        //alert(id + " " +nt + " " +growId + " " + toggle[growId]);
-        
-        
         //add musical now with unique class name
         $(id).append("<div class=\"grow grow" + growId + "\"></div>");
         
@@ -48,14 +45,16 @@ function background(row, idTag) {
     if (toggle[row]%2 == 0) {
         $(".grow" + idTag).css( "background-image", "url(\'Images/Half1.png\')");
         $(".grow" + idTag).css( "z-index", toggle[1]);
-
+        
+        console.log(row + " " + toggle[row]);
         toggle[row]=toggle[row]+1;
         return;
         
     } else {
         $(".grow" + idTag).css( "background-image", "url(\'Images/Half2.png\')");
         $(".grow" + idTag).css( "z-index", toggle[1]);
-            
+        
+        console.log(row + " " + toggle[row]); 
         toggle[row]=toggle[row]+1;
         return;
     }

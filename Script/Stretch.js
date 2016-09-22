@@ -40,7 +40,7 @@ $(document).ready(function(){
             
             if ((width/offset)==.5) {
                 playGlass(args.note);
-                that.css("border-color","white");
+ 
             }
             
             if(width == offset) {
