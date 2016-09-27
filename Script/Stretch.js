@@ -14,7 +14,6 @@ $(document).ready(function(){
             var that = $(this);
             var textWidth = 10,
                 offset = $(".row").width(),
-                RowId = $(".row").attr('id'),
                 classs=that.attr('class'),
                 width = '0',
                 
@@ -29,7 +28,7 @@ $(document).ready(function(){
                     'white-space' : 'nowrap'
                 },
                 
-                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, note: "" }, args),
+                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, note: "", row: 0 }, args),
                 i = 0,
                 stop = textWidth*-1,
                 dfd = $.Deferred();
@@ -39,7 +38,10 @@ $(document).ready(function(){
             if(!that.length) return dfd.reject();
             
             if ((width/offset)==.5) {
+                
                 playGlass(args.note);
+                that.css("border-color","white");
+          
  
             }
             
@@ -59,11 +61,10 @@ $(document).ready(function(){
                 else {
                     width = 0;
   
-                    ass= classs.replace("grow grow","");
-                    cheek= RowId.replace("row","");
+                    noteId= classs.replace("grow grow","");
                     that.css("border-color","black");
                     
-                    background(cheek,ass);
+                    background(args.row, noteId, false);
                 }
             }
             

@@ -7,8 +7,8 @@ html, body {
 }
 
 body {
-   /*background-image: url("../Images/Half2.png");*/
-   background-color: black;
+    /*background-image: url("../Images/Half2.png");*/
+    background-color: black;
     background-size: 100% 100%;
 }
 
@@ -20,16 +20,16 @@ body {
     right: 0;
     overflow: visible;
    
-    border-bottom-left-radius: 20px;
-    border-top-left-radius: 20px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
     
     background-attachment: fixed; 
     background-size: 100% 100%;
 
-    /*border-left: 10px solid;*/
-    
-    
+
+     
 }
+
 
 .row {
     overflow: visible;
@@ -49,7 +49,7 @@ body {
 
 .row:hover {
     cursor: pointer;
-    background-color: #EDEDED;
+
 }
 
 #width {
@@ -69,6 +69,5 @@ body {
     background-color: white;
 
     z-index:-1;
-    
-    /*background-image: url("../Images/Tokyo.jpg");*/
+
 }
