@@ -1,15 +1,11 @@
+
+var once= 0;
 $(document).ready(function(){
     
     (function($) {
-        $.fn.textWidth = function(){
-            var calc = '<span style="display:none">' + $(this).text() + '</span>';
-            $('body').append(calc);
-            var width = $('body').find('span:last').width();
-            $('body').find('span:last').remove();
-            return width;
-        };
-
+        
         $.fn.stretch = function(args) {
+            
             
             var that = $(this);
             var textWidth = 10,
@@ -28,7 +24,7 @@ $(document).ready(function(){
                     'white-space' : 'nowrap'
                 },
                 
-                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, note: "", row: 0 }, args),
+                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, note: "", row: 0, destroy: false }, args),
                 i = 0,
                 stop = textWidth*-1,
                 dfd = $.Deferred();
@@ -41,9 +37,9 @@ $(document).ready(function(){
                 
                 playGlass(args.note);
                 that.css("border-color","white");
-          
  
             }
+            
             
             if(width == offset) {
             
@@ -63,8 +59,15 @@ $(document).ready(function(){
   
                     noteId= classs.replace("grow grow","");
                     that.css("border-color","black");
+    
                     
-                    background(args.row, noteId, false);
+                    if (noteId==51 && once==0) {
+                        once++;
+                        destroy();
+                    }
+                    
+                    getBackground(args.row, noteId, false);
+                    
                 }
             }
             
@@ -75,20 +78,23 @@ $(document).ready(function(){
         };
         
         if(args.leftToRight) {
-            width = textWidth*-1;
-            width++;
-            stop = offset;
-        } else {
-            width--;            
+  
+            
+              
         }
         
         that.css(marqueeCss);
-        go();
+    
+
+        
+        if (checkTrue()==true) {
+            go();
+        }
+        
         return dfd.promise();
     };
         
     })(jQuery);
-
-    
    
 });
+
