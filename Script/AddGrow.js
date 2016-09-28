@@ -51,32 +51,27 @@ var x= false;
 var img1 = "Half1.png";
 var img2 = "Half2.png";
 
+var once=0;
+
+//return image background
 function getBackground(row, idTag, first) {
     
-    if (first==true) {
-        click[row]=click[row]+1;
-        totall++;
-        
-    }
-    
     if (first==false) {
-        console.log(totall);
+        totall++;
     }
     
-    if (totall==50) {
+    if (first==true) {
+        click[row]=click[row]+1;   
+    }
+    
+    if ((totall==2) && (once==0)) {
         
         img1 = "Tokyo.jpg";
         img2 = "Tokyo.jpg";
+        once++;
         
         reset();
         return;
-    }
-    
-    if (totall==71) {
-        
-        
-
-
     }
     
     if (toggle[row]%2 == 0) {
@@ -102,13 +97,17 @@ function getBackground(row, idTag, first) {
     }
     
 }
-
+var kiss=0;
 function reset() {
-    for (a = 0; a < 21; a=a+1) {
-        addNote("row"+a);
-        $("#row" + a).css("border-radius","0");
+    for (a = 1; a < 21; a=a+1) {
         
+        addNote("row"+a);
+        kiss=49+a;
+        $(".grow" + kiss).css("border-bottom-left-radius","0");
+        $(".grow" + kiss).css("border-top-left-radius","0");
     }
+    
+    return;
 }
 
 
@@ -122,23 +121,20 @@ function destroy() {
     for (f = 1; f < 21; f++) {
         $("#row" + f).html(" ");
         
-        
     }
     
     img1 = "Half1.png";
-        img2 = "Half2.png";
+    img2 = "Half2.png";
     
     $("body").css("background-image", "url(\"Images/Tokyo.jpg\")");
     $("#half").css("display", "none");
     
     //checkTrue(true);
     //$('head').html("");
+    return;
 
 }
 
-
-
- 
 var xd=true;
 function checkTrue(switcher) {
     

@@ -1,5 +1,6 @@
 
 var once= 0;
+var resets= 0;
 $(document).ready(function(){
     
     (function($) {
@@ -55,19 +56,20 @@ $(document).ready(function(){
                 }
                 
                 else {
+                    
+                    resets++;
                     width = 0;
-  
                     noteId= classs.replace("grow grow","");
                     that.css("border-color","black");
-    
                     
-                    if (noteId==51 && once==0) {
+                    if (resets==30 && once==0) {
                         once++;
                         destroy();
-                    }
-                    
+                        return;
+                    }   
+    
                     getBackground(args.row, noteId, false);
-                    
+                                        
                 }
             }
             
