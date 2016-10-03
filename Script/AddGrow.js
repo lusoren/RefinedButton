@@ -25,7 +25,7 @@ function addNote(row) {
         $('<script>')
             
             .attr('type', 'text/javascript')
-            .text("$(\".grow" + growId + "\").stretch({ note:\"" + row + "\",row:" + ass + "});")
+            .text("$(\".grow" + growId + "\").stretch({ growId:\"" + growId + "\",row:" + ass + "});")
             .appendTo('footer');
         
         getBackground(ass, growId, true);
@@ -49,8 +49,8 @@ for (i = 0; i < 21; i++) {
 var totall= 0;
 var x= false;
 
-var img1 = "Hello.jpg";
-var img2 = "Earth.png";
+var img1 = "Like.png";
+var img2 = "Like.png";
 
 var once=0;
 

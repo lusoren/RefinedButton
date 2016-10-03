@@ -24,7 +24,7 @@ $(document).ready(function(){
                     'white-space' : 'nowrap'
                 },
                 
-                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, note: "", row: 0}, args),
+                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, growId:0, row: 0}, args),
                 i = 0,
                 stop = textWidth*-1,
                 dfd = $.Deferred();
@@ -33,12 +33,13 @@ $(document).ready(function(){
         
             if(!that.length) return dfd.reject();
             
-            //if ((width/offset)==.5) {
-            //    
-            //    playGlass(args.note);
-            //    that.css("border-color","white");
-            //
-            //}
+            if ((width/offset)==.5) {
+                
+                
+                playCool(args.growId);
+                that.css("border-color","white");
+            
+            }
             
             
             if(width == offset) {
