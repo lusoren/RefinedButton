@@ -49,7 +49,7 @@ for (i = 0; i < 21; i++) {
 var totall= 0;
 var x= false;
 
-var img1 = "Map.png";
+var img1 = "Hello.jpg";
 var img2 = "Earth.png";
 
 var once=0;
