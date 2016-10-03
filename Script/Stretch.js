@@ -5,8 +5,7 @@ $(document).ready(function(){
     (function($) {
         
         $.fn.stretch = function(args) {
-            
-            
+        
             var that = $(this);
             var textWidth = 10,
                 offset = $(".row").width(),
@@ -35,8 +34,7 @@ $(document).ready(function(){
             
             if ((width/offset)==.5) {
                 
-                
-                playCool(args.growId);
+                playCool(args.row);
                 that.css("border-color","white");
             
             }

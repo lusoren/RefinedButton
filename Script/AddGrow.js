@@ -49,8 +49,8 @@ for (i = 0; i < 21; i++) {
 var totall= 0;
 var x= false;
 
-var img1 = "Like.png";
-var img2 = "Like.png";
+var img1 = "I.jpg";
+var img2 = "Would.jpg";
 
 var once=0;
 
@@ -60,6 +60,42 @@ function getBackground(row, idTag, first) {
     if (first==true) {
         click[row]=click[row]+1;
     }
+    
+    var img1 = "I.jpg";
+var img2 = "Would.jpg";
+    if (toggle[row]>2) {
+        img1="Like.jpg";
+       
+    }
+    
+    if (toggle[row]>4) {
+       img2="TO.jpg";
+    }
+    
+    if (toggle[row]>6) {
+        img1="Get.jpg";
+       
+    }
+    
+    if (toggle[row]>8) {
+        img2="To.jpg";
+       
+    }
+    
+    if (toggle[row]>10) {
+        img1="Know.jpg";
+       
+    }
+    
+    if (toggle[row]>12) {
+        img2="You.jpg";
+       
+    }
+    
+    if (toggle[row]>14) {
+        img1="You.jpg";
+       
+    } 
     
     if (toggle[row]%2 == 0) {
     
@@ -81,6 +117,10 @@ function getBackground(row, idTag, first) {
         
         return;
     }
+    
+}
+
+function getPic(row) {
     
 }
 var kiss=0;
