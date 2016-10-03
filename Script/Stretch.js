@@ -1,6 +1,5 @@
 
-var once= 0;
-var resets= 0;
+var onces= 0;
 $(document).ready(function(){
     
     (function($) {
@@ -25,7 +24,7 @@ $(document).ready(function(){
                     'white-space' : 'nowrap'
                 },
                 
-                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, note: "", row: 0, destroy: false }, args),
+                args = $.extend(true, { count: -1, speed: 1e1, leftToRight: false, note: "", row: 0}, args),
                 i = 0,
                 stop = textWidth*-1,
                 dfd = $.Deferred();
@@ -34,12 +33,12 @@ $(document).ready(function(){
         
             if(!that.length) return dfd.reject();
             
-            if ((width/offset)==.5) {
-                
-                playGlass(args.note);
-                that.css("border-color","white");
- 
-            }
+            //if ((width/offset)==.5) {
+            //    
+            //    playGlass(args.note);
+            //    that.css("border-color","white");
+            //
+            //}
             
             
             if(width == offset) {
@@ -51,22 +50,17 @@ $(document).ready(function(){
                     return dfd.resolve();
                 }
                 
-                if(args.leftToRight) {
-                    width = textWidth*-1;
-                }
-                
                 else {
-                    
-                    resets++;
+                
                     width = 0;
                     noteId= classs.replace("grow grow","");
                     that.css("border-color","black");
                     
-                    if (resets==30 && once==0) {
-                        once++;
-                        destroy();
-                        return;
-                    }   
+                    //if (noteId==34 && onces==0) {
+                    //    once++;
+                    //
+                    //    return;
+                    //}   
     
                     getBackground(args.row, noteId, false);
                                         
@@ -87,12 +81,8 @@ $(document).ready(function(){
         
         that.css(marqueeCss);
     
+        go();
 
-        
-        if (checkTrue()==true) {
-            go();
-        }
-        
         return dfd.promise();
     };
         

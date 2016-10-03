@@ -1,5 +1,6 @@
 $(document).ready(function(){
     
+    
 $(".row").click(function(){
         
     //row number as rowN
@@ -48,46 +49,31 @@ for (i = 0; i < 21; i++) {
 var totall= 0;
 var x= false;
 
-var img1 = "Half1.png";
-var img2 = "Half2.png";
+var img1 = "Map.png";
+var img2 = "Earth.png";
 
 var once=0;
 
 //return image background
 function getBackground(row, idTag, first) {
     
-    if (first==false) {
-        totall++;
-    }
-    
     if (first==true) {
-        click[row]=click[row]+1;   
-    }
-    
-    if ((totall==2) && (once==0)) {
-        
-        img1 = "Tokyo.jpg";
-        img2 = "Tokyo.jpg";
-        once++;
-        
-        reset();
-        return;
+        click[row]=click[row]+1;
     }
     
     if (toggle[row]%2 == 0) {
     
-        $(".grow" + idTag).css( "background-image", "url(\'Images/"+ img1 +"\')");
+        $(".grow" + idTag).css( "background-image", "url(\'Pics/"+ img1 +"\')");
         $(".grow" + idTag).css( "z-index", toggle[row]);
         
         
         toggle[row]=toggle[row]+1;
-    
-        
+
         return;
         
     } else {
         
-        $(".grow" + idTag).css( "background-image", "url(\'Images/"+ img2 +"\')");
+        $(".grow" + idTag).css( "background-image", "url(\'Pics/"+ img2 +"\')");
         $(".grow" + idTag).css( "z-index", toggle[row]);
     
 
@@ -102,19 +88,13 @@ function reset() {
     for (a = 1; a < 21; a=a+1) {
         
         addNote("row"+a);
-        kiss=49+a;
+        kiss=28+a;
         $(".grow" + kiss).css("border-bottom-left-radius","0");
         $(".grow" + kiss).css("border-top-left-radius","0");
     }
     
     return;
 }
-
-
-var x = "";
-var header = "<title>m u s i c __ b o x.</title> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"> <script type=\"text/javascript\" src=\"https://code.jquery.com/jquery-latest.js\"></script>";
-var header1= "<script type=\"text/javascript\" src=\"Script/PlayGlass.js\"></script><script type=\"text/javascript\" src=\"Script/Doot.js\"></script>";
-var header2= "<script type=\"text/javascript\" src=\"Script/AddGrow.js\"></script><link rel=\"stylesheet\" type=\"text/css\" href=\"Style/pageStyle.css\">";
 
 function destroy() {
 
